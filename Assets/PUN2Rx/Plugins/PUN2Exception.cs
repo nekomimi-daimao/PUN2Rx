@@ -12,6 +12,11 @@ namespace PUN2Rx
 
         public short ErrorCode { get; private set; }
 
+        public override string ToString()
+        {
+            return $"{base.ToString()}, {nameof(ErrorCode)}: {ErrorCode}";
+        }
+
         public PUN2Exception() : base()
         {
         }
