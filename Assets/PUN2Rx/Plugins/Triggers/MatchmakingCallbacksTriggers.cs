@@ -41,7 +41,7 @@ namespace PUN2Rx
 
         public void OnCreateRoomFailed(short returnCode, string message)
         {
-            onCreateRoomFailed?.OnError(new PUN2Exception(returnCode, message));
+            onCreateRoomFailed?.OnError(PUN2Exception.Create(returnCode, message));
         }
 
         public IObservable<Unit> OnCreateRoomFailedAsObservable()
@@ -65,7 +65,7 @@ namespace PUN2Rx
 
         public void OnJoinRoomFailed(short returnCode, string message)
         {
-            onJoinRoomFailed?.OnError(new PUN2Exception(returnCode, message));
+            onJoinRoomFailed?.OnError(PUN2Exception.Create(returnCode, message));
         }
 
         public IObservable<Unit> OnJoinRoomFailedAsObservable()
@@ -77,7 +77,7 @@ namespace PUN2Rx
 
         public void OnJoinRandomFailed(short returnCode, string message)
         {
-            onJoinRandomFailed?.OnError(new PUN2Exception(returnCode, message));
+            onJoinRandomFailed?.OnError(PUN2Exception.Create(returnCode, message));
         }
 
         public IObservable<Unit> OnJoinRandomFailedAsObservable()
@@ -128,4 +128,4 @@ namespace PUN2Rx
 
         #endregion
     }
-}
+}

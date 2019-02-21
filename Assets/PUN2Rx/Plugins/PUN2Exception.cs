@@ -5,15 +5,12 @@ namespace PUN2Rx
 {
     public class PUN2Exception : Exception
     {
-        public short ErrorCode { get; private set; }
-
-        public string ErrorMessage { get; private set; }
-
-        public PUN2Exception(short errorCode, string errorMessage)
+        public static PUN2Exception Create(short errorCode, string message)
         {
-            this.ErrorCode = errorCode;
-            this.ErrorMessage = errorMessage;
+            return new PUN2Exception(message) {ErrorCode = errorCode};
         }
+
+        public short ErrorCode { get; private set; }
 
         public PUN2Exception() : base()
         {
