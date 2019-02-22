@@ -8,35 +8,35 @@ namespace PUN2Rx
 {
     public static class InRoomCallbacksTriggersExtension
     {
-        public static IObservable<Player> OnPlayerEnteredRoom(this Component component)
+        public static IObservable<Player> OnPlayerEnteredRoomAsObservable(this Component component)
         {
             return component?.gameObject == null
                 ? Observable.Empty<Player>()
                 : GetOrAddComponent<InRoomCallbacksTriggers>(component.gameObject).OnPlayerEnteredRoomAsObservable();
         }
 
-        public static IObservable<Player> OnPlayerLeftRoom(this Component component)
+        public static IObservable<Player> OnPlayerLeftRoomAsObservable(this Component component)
         {
             return component?.gameObject == null
                 ? Observable.Empty<Player>()
                 : GetOrAddComponent<InRoomCallbacksTriggers>(component.gameObject).OnPlayerLeftRoomAsObservable();
         }
 
-        public static IObservable<Hashtable> OnRoomPropertiesUpdate(this Component component)
+        public static IObservable<Hashtable> OnRoomPropertiesUpdateAsObservable(this Component component)
         {
             return component?.gameObject == null
                 ? Observable.Empty<Hashtable>()
                 : GetOrAddComponent<InRoomCallbacksTriggers>(component.gameObject).OnRoomPropertiesUpdateAsObservable();
         }
 
-        public static IObservable<Tuple<Player, Hashtable>> OnPlayerPropertiesUpdate(this Component component)
+        public static IObservable<Tuple<Player, Hashtable>> OnPlayerPropertiesUpdateAsObservable(this Component component)
         {
             return component?.gameObject == null
                 ? Observable.Empty<Tuple<Player, Hashtable>>()
                 : GetOrAddComponent<InRoomCallbacksTriggers>(component.gameObject).OnPlayerPropertiesUpdateAsObservable();
         }
 
-        public static IObservable<Player> OnMasterClientSwitched(this Component component)
+        public static IObservable<Player> OnMasterClientSwitchedAsObservable(this Component component)
         {
             return component?.gameObject == null
                 ? Observable.Empty<Player>()
@@ -55,4 +55,4 @@ namespace PUN2Rx
             return component;
         }
     }
-}
+}
