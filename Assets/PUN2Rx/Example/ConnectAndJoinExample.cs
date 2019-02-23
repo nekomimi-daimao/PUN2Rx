@@ -52,7 +52,7 @@ namespace PUN2Rx.Example
                 {
                     throw PUN2Exception.Create((short) cause, cause.ToString());
                     return Unit.Default;
-                }).Merge(this.OnJoinRoomFailedAsObservable());
+                }).Merge(this.OnCreateRoomFailedAsObservable(), this.OnJoinRoomFailedAsObservable());
 
             return Observable.Amb(successStream, failureStream).Share();
         }
