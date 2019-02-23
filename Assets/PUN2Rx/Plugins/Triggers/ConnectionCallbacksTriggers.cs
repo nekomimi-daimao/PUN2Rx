@@ -73,20 +73,19 @@ namespace PUN2Rx
             return onCustomAuthenticationResponse ?? (onCustomAuthenticationResponse = new Subject<Dictionary<string, object>>());
         }
 
-        private Subject<string> onCustomAuthenticationFailed;
+        private Subject<Unit> onCustomAuthenticationFailed;
 
         public void OnCustomAuthenticationFailed(string debugMessage)
         {
             onCustomAuthenticationFailed?.OnError(new PUN2Exception(debugMessage));
         }
 
-        public IObservable<string> OnCustomAuthenticationFailedAsObservable()
+        public IObservable<Unit> OnCustomAuthenticationFailedAsObservable()
         {
-            return onCustomAuthenticationFailed ?? (onCustomAuthenticationFailed = new Subject<string>());
+            return onCustomAuthenticationFailed ?? (onCustomAuthenticationFailed = new Subject<Unit>());
         }
 
         #endregion
-
 
         #region lifecycle
 
