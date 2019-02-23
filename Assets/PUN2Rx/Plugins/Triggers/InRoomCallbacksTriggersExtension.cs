@@ -43,7 +43,7 @@ namespace PUN2Rx
 
 
         /// <summary>
-        /// <c>OnNext(Dictionary&lt;PLayer, Hashtable&gt;)</c> - IInRoomCallbacks.OnPlayerPropertiesUpdate
+        /// <c>OnNext(Tuple&lt;PLayer, Hashtable&gt;)</c> - IInRoomCallbacks.OnPlayerPropertiesUpdate
         /// </summary>        
         public static IObservable<Tuple<Player, Hashtable>> OnPlayerPropertiesUpdateAsObservable(this Component component)
         {
@@ -74,4 +74,4 @@ namespace PUN2Rx
             return component;
         }
     }
-}
+}

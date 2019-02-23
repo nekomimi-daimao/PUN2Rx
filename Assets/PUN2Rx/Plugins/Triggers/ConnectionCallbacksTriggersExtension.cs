@@ -52,7 +52,7 @@ namespace PUN2Rx
         }
 
         /// <summary>
-        /// <c>OnNext(Dictionary&lt;string, object&gt;)</c> - IConnectionCallbacks.OnCustomAuthenticationResponse
+        /// <c>OnNext(Tuple&lt;string, object&gt;)</c> - IConnectionCallbacks.OnCustomAuthenticationResponse
         /// </summary>
         public static IObservable<Dictionary<string, object>> OnCustomAuthenticationResponseAsObservable(this Component component)
         {
@@ -84,4 +84,4 @@ namespace PUN2Rx
             return component;
         }
     }
-}
+}
