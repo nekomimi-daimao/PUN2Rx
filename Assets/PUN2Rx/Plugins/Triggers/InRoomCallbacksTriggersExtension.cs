@@ -6,8 +6,14 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 namespace PUN2Rx
 {
+    /// <summary>
+    /// <see cref="Photon.Realtime.IInRoomCallbacks"/>
+    /// </summary>
     public static class InRoomCallbacksTriggersExtension
     {
+        /// <summary>
+        /// <c>OnNext(Player)</c> - IInRoomCallbacks.OnPlayerEnteredRoom
+        /// </summary>
         public static IObservable<Player> OnPlayerEnteredRoomAsObservable(this Component component)
         {
             return component?.gameObject == null
@@ -15,6 +21,9 @@ namespace PUN2Rx
                 : GetOrAddComponent<InRoomCallbacksTriggers>(component.gameObject).OnPlayerEnteredRoomAsObservable();
         }
 
+        /// <summary>
+        /// <c>OnNext(Player)</c> - IInRoomCallbacks.OnPlayerLeftRoom
+        /// </summary>
         public static IObservable<Player> OnPlayerLeftRoomAsObservable(this Component component)
         {
             return component?.gameObject == null
@@ -22,6 +31,9 @@ namespace PUN2Rx
                 : GetOrAddComponent<InRoomCallbacksTriggers>(component.gameObject).OnPlayerLeftRoomAsObservable();
         }
 
+        /// <summary>
+        /// <c>OnNext(Hashtable)</c> - IInRoomCallbacks.OnRoomPropertiesUpdate
+        /// </summary>
         public static IObservable<Hashtable> OnRoomPropertiesUpdateAsObservable(this Component component)
         {
             return component?.gameObject == null
@@ -29,6 +41,10 @@ namespace PUN2Rx
                 : GetOrAddComponent<InRoomCallbacksTriggers>(component.gameObject).OnRoomPropertiesUpdateAsObservable();
         }
 
+
+        /// <summary>
+        /// <c>OnNext(Dictionary&lt;PLayer, Hashtable&gt;)</c> - IInRoomCallbacks.OnPlayerPropertiesUpdate
+        /// </summary>        
         public static IObservable<Tuple<Player, Hashtable>> OnPlayerPropertiesUpdateAsObservable(this Component component)
         {
             return component?.gameObject == null
@@ -36,6 +52,9 @@ namespace PUN2Rx
                 : GetOrAddComponent<InRoomCallbacksTriggers>(component.gameObject).OnPlayerPropertiesUpdateAsObservable();
         }
 
+        /// <summary>
+        /// <c>OnNext(Player)</c> - IInRoomCallbacks.OnMasterClientSwitched
+        /// </summary>
         public static IObservable<Player> OnMasterClientSwitchedAsObservable(this Component component)
         {
             return component?.gameObject == null
