@@ -2,10 +2,16 @@
 Convert [PUN 2](https://www.photonengine.com/en-US/pun)'s callback to [UniRx](https://github.com/neuecc/UniRx)'s Operator.
 
 ## Descriotion
-*Photon Unity Networking 2* has many callbacks.
-Using PUN2Rx, You can handle them very easily.
-You don't need to inherit and implement photon in your class.
-PUN2Rx classified them into two types - OnNext only, OnError only.
+*Photon Unity Networking 2* has many callbacks.  
+Since each event is not independent, it needs to be handled in order.  
+By treating it as an operator of UniRx, Using PUN2Rx, handling of the event becomes easy.
+
+Also, in order to receive PUN 2 's event callback you need to inherit MonoBehaviourPunCallbacks or inherit each interface.  
+You can freely change the base class by using PUN2Rx.
+
+PUN2Rx classified them into two types - OnNext only, OnError only.  
+Most importantly, the normal event operator notifies OnNext only and the error operator notifies OnError only.  
+With this, it is possible to handle normal events and errors with one Subscribe.  
 See XMLdoc or [table](#operators).
 
 *WARN: Task isn't supported yet.*
