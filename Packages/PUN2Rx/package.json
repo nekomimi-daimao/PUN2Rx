@@ -1,0 +1,10 @@
+{
+  "name": "pun2rx",
+  "displayName": "PUN2Rx",
+  "version": "1.0.1",
+  "unity": "2018.3",
+  "description": "Reactive Extensions for PUN2",
+  "license": "MIT",
+  "type": "library",
+  "hideInEditor": false
+}
