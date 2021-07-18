@@ -35,6 +35,18 @@ namespace PUN2Rx
             return onOwnershipTransferred ?? (onOwnershipTransferred = new Subject<Tuple<PhotonView, Player>>());
         }
 
+        private Subject<Tuple<PhotonView, Player>> onOwnershipTransferFailed;
+
+        public void OnOwnershipTransferFailed(PhotonView targetView, Player senderOfFailedRequest)
+        {
+            onOwnershipTransferFailed?.OnNext(Tuple.Create(targetView, senderOfFailedRequest));
+        }
+
+        public IObservable<Tuple<PhotonView, Player>> OnOwnershipTransferFailedAsObservable()
+        {
+            return onOwnershipTransferFailed ?? (onOwnershipTransferFailed = new Subject<Tuple<PhotonView, Player>>());
+        }
+
         #endregion
 
         #region lifecycle
