@@ -114,6 +114,7 @@ OnLeftRoomAsObservable | OnNext | Unit
 `Photon.Pun.IPunOwnershipCallbacks` | |
 OnOwnershipRequestAsObservable | OnNext | Tuple&lt;PhotonView, Player&gt;
 OnOwnershipTransferredAsObservable | OnNext | Tuple&lt;PhotonView, Player&gt;
+OnOwnershipTransferFailedAsObservable | OnNext | Tuple&lt;PhotonView, Player&gt;
 
 ## Author
 [nekomimi-daimao](https://qiita.com/nekomimi-daimao)
